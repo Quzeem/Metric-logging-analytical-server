@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "42ca4a87-2af1-45ed-a944-a03235e45623",
+		"name": "Metric",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Record Metric Values (POST /api/v1/:metric)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"value\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/metricA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"metricA"
+					]
+				},
+				"description": "- Collect values for a metric using the metric name specified in the request params if there is no active window. E.g /api/v1/sample\r\n\r\n- Add incoming value to the values of a metric if there is an active window"
+			},
+			"response": []
+		},
+		{
+			"name": "Metric Averages Median (GET /api/v1/:metric/median)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/metricA/median",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"metricA",
+						"median"
+					]
+				},
+				"description": "- return only the median of averages of a metric windows that have been recorded. E.g /api/v1/sample/median"
+			},
+			"response": [
+				{
+					"name": "Metric Averages Median (GET /api/v1/:metric/median)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/api/v1/metricA/median",
+							"path": [
+								"api",
+								"v1",
+								"metricA",
+								"median"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d-3OW3KtwncecErj6nER132cvejvA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 Mar 2021 15:07:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"median\": 29\n}"
+				}
+			]
+		},
+		{
+			"name": "Clear Metric Averages (DELETE /api/v1/:metric)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/metricA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"metricA"
+					]
+				},
+				"description": "- clears all the recorded averages for a metric. E.g /api/v1/sample"
+			},
+			"response": []
+		}
+	]
+}

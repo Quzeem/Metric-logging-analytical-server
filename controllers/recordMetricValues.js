@@ -19,17 +19,17 @@ module.exports = (req, res) => {
     metric = metricObj[req.params.metric];
   }
 
-  if (!req.body.metricValue || typeof req.body.metricValue !== 'number')
+  if (!req.body.value || typeof req.body.value !== 'number')
     return res.status(400).send({
       status: 'fail',
       message: 'Please provide a metric value as a number.',
     });
 
   if (metric.isWindowActive && metric.metricValues.length > 0) {
-    metric.metricValues.push(req.body.metricValue);
+    metric.metricValues.push(req.body.value);
   } else {
     metric.isWindowActive = true;
-    metric.metricValues.push(req.body.metricValue);
+    metric.metricValues.push(req.body.value);
     setTimeout(() => {
       metric.isWindowActive = false;
       const avgResult = calculateAverage(metric.metricValues);
@@ -38,5 +38,5 @@ module.exports = (req, res) => {
     }, 10000);
   }
 
-  res.send({ status: 'success', metric });
+  res.send({});
 };

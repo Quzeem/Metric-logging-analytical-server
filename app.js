@@ -27,6 +27,13 @@ app.use(morgan('combined', { stream: accessLogStream }));
 // Enable CORS
 app.use(cors());
 
+app.get('/api/v1/doc', (req, res) => {
+  const docStream = fs.createReadStream(
+    path.join(__dirname, 'documentation', 'metric.json')
+  );
+  docStream.pipe(res);
+});
+
 // Mount router
 app.use('/api/v1', metricRouter);
 

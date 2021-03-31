@@ -22,5 +22,5 @@ module.exports = (req, res) => {
       .status(400)
       .send({ status: 'fail', message: 'No averages recorded yet.' });
 
-  res.send({ status: 'success', median });
+  res.send({ median });
 };

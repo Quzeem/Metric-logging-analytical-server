@@ -3,6 +3,7 @@
 ## Usage
 
 Rename ".env.example" to ".env" and update the values of the enviroment variables
+Visit the endpoint: "/api/v1/doc" to view documentation
 
 ## Install Dependencies
 
@@ -18,6 +19,9 @@ npm run dev
 
 # Production mode
 npm run start
+
+# Run test
+npm run test
 ```
 
 - Version: 1.0.0
