@@ -2,8 +2,8 @@
 
 ## Usage
 
-Rename ".env.example" to ".env" and update the values of the enviroment variables\n
-Visit the endpoint: "/api/v1/doc" to view documentation
+- Rename ".env.example" to ".env" and update the values of the enviroment variables
+- Visit the endpoint: "/api/v1/doc" to view documentation
 
 ## Install Dependencies
 
