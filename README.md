@@ -3,7 +3,7 @@
 ## Usage
 
 - Rename ".env.example" to ".env" and update the values of the enviroment variables
-- Visit the endpoint: "/api/v1/doc" to view documentation
+- Click this [link](https://zeemagmetriclogger.herokuapp.com/api/v1/doc) to view the API documentation
 
 ## Install Dependencies
 
@@ -19,8 +19,11 @@ npm run dev
 
 # Production mode
 npm run start
+```
 
-# Run test
+## Run Test
+
+```
 npm run test
 ```
 

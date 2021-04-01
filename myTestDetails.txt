@@ -1,0 +1,7 @@
+Candidate Name: Quzeem Agbaje
+Assignment Version Number: BEJ202102
+
+Endpoints:
+POST - https://zeemagmetriclogger.herokuapp.com/api/v1/:metric
+GET - https://zeemagmetriclogger.herokuapp.com/api/v1/:metric/median
+DELETE - https://zeemagmetriclogger.herokuapp.com/api/v1/:metric
